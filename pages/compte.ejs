@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon compte</title>
+</head>
+<body>
+  <h1>Mon compte</h1>
+
+  <form method="POST" action="/compte">
+    <p>
+      <label>Nom :
+        <input type="text" name="nom" value="<%= utilisateur.nom %>">
+      </label>
+    </p>
+    <p>
+      <label>Prénom :
+        <input type="text" name="prenom" value="<%= utilisateur.prenom %>">
+      </label>
+    </p>
+    <p>
+      <label>Email :
+        <input type="email" name="email" value="<%= utilisateur.email %>">
+      </label>
+    </p>
+    <button type="submit">Mettre à jour</button>
+    <p>
+        <label>Mot de passe :
+          <input type="text" name="mdp" value="<%= utilisateur.mdp %>">
+        </label>
+      </p>
+  </form>
+
+  <p><a href="/accueil">Retour à l'accueil</a></p>
+</body>
+</html>
