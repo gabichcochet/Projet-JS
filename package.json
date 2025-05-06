@@ -15,5 +15,13 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2"
   },
-  "description": ""
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabichcochet/Projet-JS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gabichcochet/Projet-JS/issues"
+  },
+  "homepage": "https://github.com/gabichcochet/Projet-JS#readme"
 }
