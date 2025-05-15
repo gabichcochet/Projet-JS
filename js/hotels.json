@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nom": "Le Grand Paris",
+    "description": "Appartement cosy au cœur de Paris, 2 chambres, 4 personnes.",
+    "prix": 120,
+    "image": "/paris.jpg"
+  },
+  {
+    "id": 2,
+    "nom": "Villa Côte d'Azur",
+    "description": "Belle villa avec piscine et vue sur la mer.",
+    "prix": 250,
+    "image": "/images/cotedazur.jpg"
+  },
+  {
+    "id": 3,
+    "nom": "Chalet Montagne",
+    "description": "Chalet chaleureux à la montagne, prêt pour le ski.",
+    "prix": 180,
+    "image": "/images/montagne.jpg"
+  }
+]

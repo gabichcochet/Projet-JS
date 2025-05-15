@@ -2,10 +2,22 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Mini-Airbnb</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <title>Nos hébergements</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <a href="/compte">Mon compte</a>
+  <h1>Nos hébergements</h1>
+
+  <div class="hotels-list">
+    <% hotels.forEach(hotel => { %>
+      <div class="hotel-card">
+        <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" style="width:300px;height:200px;object-fit:cover;">
+        <h2><%= hotel.nom %></h2>
+        <p><%= hotel.description %></p>
+        <p>Prix par nuit : <strong><%= hotel.prix %> €</strong></p>
+        <a href="/hotels/<%= hotel.id %>">Voir les détails</a>
+      </div>
+    <% }) %>
+  </div>
 </body>
 </html>

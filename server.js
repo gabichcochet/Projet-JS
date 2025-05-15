@@ -13,6 +13,12 @@ app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 app.use(express.static('public'))
 
+// dans server.js, après avoir instancié app...
+const hotelsRouter = require('./js/hotels');
+app.use('/hotels', hotelsRouter);
+// et, si tu veux que '/accueil' y redirige :
+app.get('/accueil', (req, res) => res.redirect('/hotels'));
+
 app.use('/', routesConnexion)
 
 app.get('/accueil', (req, res) => {

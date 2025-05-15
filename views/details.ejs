@@ -2,12 +2,16 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title><%= logement.titre %></title>
+  <title><%= hotel.nom %></title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <h1><%= logement.titre %></h1>
-  <p>Prix : <%= logement.prix %>€ / nuit</p>
-  <p>Description : <%= logement.description %></p>
-  <a href="/">← Retour</a>
+  <article class="hotel-detail">
+    <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" style="width:600px;height:400px;object-fit:cover;">
+    <h1><%= hotel.nom %></h1>
+    <p><%= hotel.description %></p>
+    <p>Prix : <strong><%= hotel.prix %> € / nuit</strong></p>
+    <a href="/hotels">← Retour à la liste</a>
+  </article>
 </body>
 </html>
