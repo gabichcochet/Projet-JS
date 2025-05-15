@@ -1,3 +1,17 @@
+const mongoose = require('mongoose');
+const Logement = require('./logement');
+
+app.get('/logement', async (req, res) => {
+  const logements = await Logement.find();
+  res.render('logements', { logements });
+});
+
+
+// Connexion à la base de données
+mongoose
+  .connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('✅ Connecté à MongoDB'))
+  .catch(err => console.error('❌ Erreur de connexion MongoDB :', err));
 const express = require('express')
 const app = express()
 const path = require('path')
