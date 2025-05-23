@@ -32,13 +32,15 @@ function verifierConnexion(req, res, next) {
 }
 
 router.get('/connexion', (req, res) => {
-	res.render('connexion')
+	res.render('connexion', { erreur: null })
 })
 
 router.post('/connexion', (req, res) => {
 	const { email, mdp } = req.body
 	const utilisateur = utilisateurs.find(u => u.email === email && u.mdp === mdp)
-	if (!utilisateur) return res.send('Identifiants incorrects')
+	if (!utilisateur) {
+  		return res.render('connexion', { erreur: 'Identifiants incorrects' })
+	}
 
 	const token = jwt.sign({ id: utilisateur.id }, CLE_SECRETE, { expiresIn: '1h' })
 	res.cookie('token', token, { httpOnly: true })
@@ -46,25 +48,27 @@ router.post('/connexion', (req, res) => {
 })
 
 router.get('/inscription', (req, res) => {
-	res.render('inscription')
+  res.render('inscription', { erreur: null })
 })
 
 router.post('/inscription', (req, res) => {
-	const { nom, prenom, email, mdp } = req.body
-	const existant = utilisateurs.find(u => u.email === email)
-	if (existant) return res.send('Cet email est déjà utilisé.')
+  const { nom, prenom, email, mdp } = req.body
+  const existant = utilisateurs.find(u => u.email === email)
+  if (existant) {
+    return res.render('inscription', { erreur: 'Cet email est déjà utilisé.' })
+  }
 
-	const nouvelUtilisateur = {
-		id: Date.now(),
-		nom,
-		prenom,
-		email,
-		mdp
-	}
+  const nouvelUtilisateur = {
+    id: Date.now(),
+    nom,
+    prenom,
+    email,
+    mdp
+  }
 
-	utilisateurs.push(nouvelUtilisateur)
-	fs.writeFileSync(cheminFichier, JSON.stringify(utilisateurs, null, 2))
-	res.redirect('/connexion')
+  utilisateurs.push(nouvelUtilisateur)
+  fs.writeFileSync(cheminFichier, JSON.stringify(utilisateurs, null, 2))
+  res.redirect('/connexion')
 })
 
 router.get('/deconnexion', (req, res) => {

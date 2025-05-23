@@ -3,18 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Inscription</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/inscription.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Créer un compte</h1>
-  <form action="/inscription" method="POST">
-    <label>Nom : <input type="text" name="nom" required></label><br>
-    <label>Prénom : <input type="text" name="prenom" required></label><br>
-    <label>Email : <input type="email" name="email" required></label><br>
-    <label>Mot de passe : <input type="password" name="mdp" required></label><br>
-    <button type="submit">S'inscrire</button>
-  </form>
+  <div class="signup-container">
+    <h1>Créer un compte</h1>
 
-  <p>Déjà inscrit ? <a href="/connexion">Se connecter</a></p>
+    <% if (erreur) { %>
+      <div class="erreur-message"><%= erreur %></div>
+    <% } %>
+
+    <form action="/inscription" method="POST">
+      <label>Nom</label>
+      <input type="text" name="nom" required>
+
+      <label>Prénom</label>
+      <input type="text" name="prenom" required>
+
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Mot de passe</label>
+      <input type="password" name="mdp" required>
+
+      <button type="submit">S'inscrire</button>
+    </form>
+
+    <div class="login-link">
+      Déjà inscrit ? <a href="/connexion">Se connecter</a>
+    </div>
+  </div>
 </body>
 </html>

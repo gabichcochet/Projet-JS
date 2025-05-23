@@ -3,16 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Connexion</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/connexion.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Connexion</h1>
-  <form action="/connexion" method="POST">
-    <label>Email : <input type="email" name="email" required></label><br>
-    <label>Mot de passe : <input type="password" name="mdp" required></label><br>
-    <button type="submit">Se connecter</button>
-  </form>
+  <div class="login-container">
+    <h1>Connexion</h1>
 
-  <p>Pas encore de compte ? <a href="/inscription">Créer un compte</a></p>
+    <% if (erreur) { %>
+      <div class="erreur-message"><%= erreur %></div>
+    <% } %>
+
+    <form action="/connexion" method="POST">
+      <label>Email</label>
+      <input type="email" name="email" required>
+
+      <label>Mot de passe</label>
+      <input type="password" name="mdp" required>
+
+      <button type="submit">Se connecter</button>
+    </form>
+
+    <div class="signup-link">
+      Pas encore de compte ? <a href="/inscription">Créer un compte</a>
+    </div>
+  </div>
 </body>
 </html>
