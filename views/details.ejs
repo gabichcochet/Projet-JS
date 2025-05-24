@@ -3,15 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title><%= hotel.nom %></title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/details.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <article class="hotel-detail">
-    <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" style="width:600px;height:400px;object-fit:cover;">
-    <h1><%= hotel.nom %></h1>
-    <p><%= hotel.description %></p>
-    <p>Prix : <strong><%= hotel.prix %> € / nuit</strong></p>
-    <a href="/hotels">← Retour à la liste</a>
-  </article>
+  <header class="site-header">
+    <a href="/accueil" class="logo">Mini-Airbnb</a>
+    <nav>
+      <a href="/accueil">Accueil</a>
+      <a href="/compte" class="btn-account">Mon compte</a>
+      <a href="/deconnexion">Se déconnecter</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <div class="detail-container">
+      <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" class="detail-image">
+      <div class="detail-info">
+        <h1><%= hotel.nom %></h1>
+        <p class="detail-desc"><%= hotel.description %></p>
+        <p class="detail-price">Prix : <strong><%= hotel.prix %> € / nuit</strong></p>
+        <a href="/hotels" class="back-btn">← Retour à la liste</a>
+      </div>
+    </div>
+  </main>
 </body>
 </html>

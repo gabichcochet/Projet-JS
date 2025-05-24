@@ -3,34 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>Mon compte</title>
+  <link rel="stylesheet" href="/css/compte.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Mon compte</h1>
+  <header class="site-header">
+    <a href="/accueil" class="logo">Mini-Airbnb</a>
+    <nav>
+      <a href="/accueil">Accueil</a>
+      <a href="/compte" class="btn-account">Mon compte</a>
+      <a href="/deconnexion">Se déconnecter</a>
+    </nav>
+  </header>
 
-  <form method="POST" action="/compte">
-    <p>
-      <label>Nom :
-        <input type="text" name="nom" value="<%= utilisateur.nom %>">
-      </label>
-    </p>
-    <p>
-      <label>Prénom :
-        <input type="text" name="prenom" value="<%= utilisateur.prenom %>">
-      </label>
-    </p>
-    <p>
-      <label>Email :
-        <input type="email" name="email" value="<%= utilisateur.email %>">
-      </label>
-    </p>
-    <p>
-        <label>Mot de passe :
-          <input type="text" name="mdp" value="<%= utilisateur.mdp %>">
-        </label>
-      </p>
-      <button type="submit">Mettre à jour</button>
-  </form>
+  <main class="main-content">
+    <div class="account-container">
+      <h1>Mon compte</h1>
 
-  <p><a href="/accueil">Retour à l'accueil</a></p>
+      <% if (erreur) { %>
+        <div class="erreur-message"><%= erreur %></div>
+      <% } else if (message) { %>
+        <div class="info-message"><%= message %></div>
+      <% } %>
+
+      <form action="/compte" method="POST">
+        <label>Nom</label>
+        <input type="text" name="nom" value="<%= utilisateur.nom %>" required>
+
+        <label>Prénom</label>
+        <input type="text" name="prenom" value="<%= utilisateur.prenom %>" required>
+
+        <label>Email</label>
+        <input type="email" name="email" value="<%= utilisateur.email %>" required>
+
+        <label>Mot de passe <small>(laisser vide pour conserver l'actuel)</small></label>
+        <input type="password" name="mdp" placeholder="Nouveau mot de passe">
+
+        <button type="submit">Mettre à jour</button>
+      </form>
+    </div>
+  </main>
 </body>
 </html>

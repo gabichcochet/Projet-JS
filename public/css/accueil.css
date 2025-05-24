@@ -1,0 +1,111 @@
+/* public/css/accueil.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: #f4f6f8;
+  color: #333;
+}
+
+.site-header {
+  background: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.site-header nav a {
+  margin-left: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #444;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.site-header nav a.btn-account {
+  background: #007bff;
+  color: #fff;
+}
+
+.site-header nav a.btn-account:hover {
+  background: #0056b3;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.hotels-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.hotel-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.hotel-card .info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  color: #222;
+}
+
+.hotel-card p {
+  flex: 1;
+  margin: 0 0 1rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.hotel-card .price {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.hotel-card a.details-btn {
+  text-align: center;
+  display: block;
+  padding: 0.75rem;
+  background: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.2s ease;
+}
+
+.hotel-card a.details-btn:hover {
+  background: #0056b3;
+}

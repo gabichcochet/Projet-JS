@@ -11,13 +11,55 @@
     "nom": "Villa Côte d'Azur",
     "description": "Belle villa avec piscine et vue sur la mer.",
     "prix": 250,
-    "image": "/images/cotedazur.jpg"
+    "image": "/cote-d'azur.jpg"
   },
   {
     "id": 3,
     "nom": "Chalet Montagne",
     "description": "Chalet chaleureux à la montagne, prêt pour le ski.",
     "prix": 180,
-    "image": "/images/montagne.jpg"
+    "image": "/chalet-montagne.jpg"
+  },
+  {
+    "id": 4,
+    "nom": "Penthouse Lyonnais",
+    "description": "Superbe penthouse avec terrasse panoramique sur la ville de Lyon.",
+    "prix": 200,
+    "image": "/lyon-penthouse.jpg"
+  },
+  {
+    "id": 5,
+    "nom": "Cottage Normandie",
+    "description": "Petit cottage traditionnel en Normandie, idéal pour se ressourcer.",
+    "prix": 95,
+    "image": "/normandie-cottage.jpg"
+  },
+  {
+    "id": 6,
+    "nom": "Loft Bordelais",
+    "description": "Loft design au cœur de Bordeaux, proche des quais et des vignobles.",
+    "prix": 150,
+    "image": "/bordeaux-loft.jpg"
+  },
+  {
+    "id": 7,
+    "nom": "Bungalow Guadeloupe",
+    "description": "Bungalow tropical en bord de plage, eau turquoise et farniente.",
+    "prix": 220,
+    "image": "/guadeloupe-bungalow.jpg"
+  },
+  {
+    "id": 8,
+    "nom": "Riad Marrakech",
+    "description": "Riad traditionnel avec patio et fontaine, en plein médina de Marrakech.",
+    "prix": 130,
+    "image": "/marrakech-riad.jpg"
+  },
+  {
+    "id": 9,
+    "nom": "Maison Vigneron",
+    "description": "Charmante maison au milieu des vignes de Champagne, dégustations à proximité.",
+    "prix": 170,
+    "image": "/champagne-maison.jpg"
   }
 ]

@@ -3,22 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title>Nos hébergements</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/css/accueil.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <h1>Nos hébergements</h1>
+  <header class="site-header">
+    <a href="/accueil" class="logo">Mini-Airbnb</a>
+    <nav>
+      <a href="/accueil">Accueil</a>
+      <a href="/compte" class="btn-account">Mon compte</a>
+      <a href="/deconnexion">Se déconnecter</a>
+    </nav>
+  </header>
 
-  <div class="hotels-list">
-    <% hotels.forEach(hotel => { %>
-      <div class="hotel-card">
-        <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" style="width:300px;height:200px;object-fit:cover;">
-        <h2><%= hotel.nom %></h2>
-        <p><%= hotel.description %></p>
-        <p>Prix par nuit : <strong><%= hotel.prix %> €</strong></p>
-        <a href="/hotels/<%= hotel.id %>">Voir les détails</a>
-      </div>
-    <% }) %>
-  </div>
+  <main class="main-content">
+    <h1>Nos hébergements</h1>
+    <div class="hotels-list">
+      <% hotels.forEach(hotel => { %>
+        <div class="hotel-card">
+          <img src="<%= hotel.image %>" alt="<%= hotel.nom %>">
+          <div class="info">
+            <h2><%= hotel.nom %></h2>
+            <p><%= hotel.description %></p>
+            <div class="price">Prix : <strong><%= hotel.prix %> € / nuit</strong></div>
+          </div>
+          <a href="/hotels/<%= hotel.id %>" class="details-btn">Voir les détails</a>
+        </div>
+      <% }) %>
+    </div>
+  </main>
 </body>
 </html>

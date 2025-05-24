@@ -18,9 +18,9 @@ function loadHotels() {
 
 // GET /hotels — liste tous les hôtels
 router.get('/', (req, res) => {
-  const hotels = loadHotels();
-  res.render('accueil', { hotels });
-});
+  const hotels = loadHotels()
+  res.render('accueil', { hotels })
+})
 
 // GET /hotels/:id — détail d’un hôtel
 router.get('/:id', (req, res) => {
