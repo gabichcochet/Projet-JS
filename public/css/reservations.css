@@ -42,89 +42,105 @@ body {
 }
 
 .main-content {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 2rem auto;
   padding: 0 1rem;
 }
 
-.detail-container {
+.main-content h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.empty {
+  text-align: center;
+  color: #666;
+  font-style: italic;
+}
+
+.hotels-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.hotel-card {
   background: #fff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
 }
 
-.detail-image {
+.hotel-card img {
   width: 100%;
-  height: 400px;
+  height: 180px;
   object-fit: cover;
 }
 
-.detail-info {
-  padding: 2rem;
+.hotel-card .info {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.detail-info h1 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
+.hotel-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
   color: #222;
 }
 
-.detail-desc {
-  margin-bottom: 1.5rem;
+.hotel-card p {
+  flex: 1;
+  margin: 0 0 0.5rem;
   color: #555;
-  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
-.detail-price {
-  margin-bottom: 2rem;
+.hotel-card .price,
+.hotel-card .date {
   font-weight: 600;
+  margin-bottom: 0.75rem;
 }
 
-.back-btn {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #007bff;
+.hotel-card .date {
+  color: #444;
+  font-size: 0.9rem;
+}
+
+.hotel-card a.details-btn {
+  text-align: center;
+  display: block;
+  padding: 0.75rem;
+  background: #007bff;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.2s ease;
+  border-radius: 0 0 12px 12px;
+  transition: background 0.2s ease;
 }
 
-.back-btn:hover {
-  background-color: #0056b3;
+.hotel-card a.details-btn:hover {
+  background: #0056b3;
 }
 
-.reserve-btn {
+.cancel-btn {
   display: block;
   width: 100%;
   padding: 0.75rem;
-  margin-bottom: 1rem;
   font-size: 1rem;
   font-weight: 600;
-  background-color: #28a745;
+  background-color: #dc3545;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 0 0 12px 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-}
-
-.reserve-btn:hover {
-  background-color: #1e7e34;
-}
-
-.info-message {
-  background: #e6ffed;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
   text-align: center;
-  font-weight: 500;
+}
+
+.cancel-btn:hover {
+  background-color: #c82333;
 }

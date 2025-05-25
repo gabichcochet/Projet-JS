@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mes réservations</title>
+  <link rel="stylesheet" href="/css/reservations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <a href="/accueil" class="logo">Mini-Airbnb</a>
+    <nav>
+      <a href="/accueil">Accueil</a>
+      <a href="/reservations">Mes réservations</a>
+      <a href="/compte" class="btn-account">Mon compte</a>
+      <a href="/deconnexion">Se déconnecter</a>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h1>Mes réservations</h1>
+    <% if (mesHotels.length === 0) { %>
+      <p class="empty">Vous n'avez encore aucune réservation.</p>
+    <% } else { %>
+      <div class="hotels-list">
+        <% mesHotels.forEach(hotel => { %>
+          <div class="hotel-card">
+            <img src="<%= hotel.image %>" alt="<%= hotel.nom %>">
+            <div class="info">
+              <h2><%= hotel.nom %></h2>
+              <div class="date">Réservé le : <%= hotel.date %></div>
+            </div>
+            <form action="/reservations/<%= hotel.reservationId %>/annuler" method="POST">
+              <button type="submit" class="cancel-btn">Annuler la réservation</button>
+            </form>
+          </div>
+        <% }) %>
+      </div>
+    <% } %>
+  </main>
+</body>
+</html>

@@ -11,6 +11,7 @@
     <a href="/accueil" class="logo">Mini-Airbnb</a>
     <nav>
       <a href="/accueil">Accueil</a>
+      <a href="/reservations">Mes réservations</a>
       <a href="/compte" class="btn-account">Mon compte</a>
       <a href="/deconnexion">Se déconnecter</a>
     </nav>
@@ -21,8 +22,16 @@
       <img src="<%= hotel.image %>" alt="<%= hotel.nom %>" class="detail-image">
       <div class="detail-info">
         <h1><%= hotel.nom %></h1>
+        <% if (msg) { %>
+          <div class="info-message"><%= msg %></div>
+        <% } %>
         <p class="detail-desc"><%= hotel.description %></p>
         <p class="detail-price">Prix : <strong><%= hotel.prix %> € / nuit</strong></p>
+
+        <form action="/hotels/<%= hotel.id %>/reserver" method="POST">
+          <button type="submit" class="reserve-btn">Réserver</button>
+        </form>
+
         <a href="/hotels" class="back-btn">← Retour à la liste</a>
       </div>
     </div>

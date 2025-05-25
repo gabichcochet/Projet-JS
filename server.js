@@ -16,6 +16,10 @@ app.use(express.static('public'))
 // dans server.js, après avoir instancié app...
 const hotelsRouter = require('./js/hotels');
 app.use('/hotels', hotelsRouter);
+
+const reservationsRouter = require('./js/reservations')
+app.use('/reservations', reservationsRouter)
+
 // et, si tu veux que '/accueil' y redirige :
 app.get('/accueil', (req, res) => res.redirect('/hotels'))
 

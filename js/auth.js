@@ -118,3 +118,5 @@ router.post('/compte', verifierConnexion, (req, res) => {
 })
 
 module.exports = router
+
+module.exports.verifierConnexion = verifierConnexion
