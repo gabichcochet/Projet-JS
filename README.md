@@ -33,7 +33,7 @@ node server.js
 
 Puis sur un navigateur se rendre à l'URL :
 
-<http://localhost:8080/inscription>
+<http://localhost:3000/inscription>
 
 ## Crédits
 

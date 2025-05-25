@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 const routesConnexion = require('./js/auth')
 require('dotenv').config()
 
-const PORT = process.env.PORT || 8080
+const PORT = process.env.PORT
 
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
