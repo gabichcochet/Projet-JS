@@ -38,5 +38,3 @@ Puis sur un navigateur se rendre à l'URL :
 ## Crédits
 
 Fait par Gabriel COCHET et Raphaël GEAY.
-
-.
